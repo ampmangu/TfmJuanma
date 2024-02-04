@@ -6,4 +6,8 @@
     <string name="phrasal_verbs">Phrasal Verbs</string>
     <string name="verb_tenses">Verb Tenses</string>
     <string name="collocations">Collocations</string>
+    <string name="adjectives">Adjectives</string>
+    <string name="hobbies">Hobbies</string>
+    <string name="countries">Countries</string>
+    <string name="health_amp_food"><![CDATA[Health & Food]]></string>
 </resources>

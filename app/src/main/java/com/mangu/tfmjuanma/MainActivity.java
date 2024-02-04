@@ -31,5 +31,6 @@ public class MainActivity extends AppCompatActivity {
 
     private void initializeButtons() {
         binding.btnRecap.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, RecapActivity.class)));
+        binding.btnReview.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ReviewActivity.class)));
     }
 }
