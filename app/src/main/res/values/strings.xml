@@ -2,4 +2,8 @@
     <string name="app_name">TfmJuanma</string>
     <string name="recap">Recap</string>
     <string name="review">Review</string>
+    <string name="vocabulary">Vocabulary</string>
+    <string name="phrasal_verbs">Phrasal Verbs</string>
+    <string name="verb_tenses">Verb Tenses</string>
+    <string name="collocations">Collocations</string>
 </resources>
