@@ -3,16 +3,35 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:scrollbars="none"
     android:layout_weight="1"
-    android:background="@drawable/background"
-
+    android:background="@color/white"
+    android:padding="20dp"
     tools:context=".activities.VerbTenseActivity">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="200dp"
+        android:paddingEnd="200dp"
         android:orientation="vertical">
 
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:background="@drawable/row_border"
+            android:text="@string/verbos" />
+        <TableLayout
+            android:id="@+id/tableVerbs"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </TableLayout>
     </LinearLayout>
 
 
