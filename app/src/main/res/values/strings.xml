@@ -10,4 +10,8 @@
     <string name="hobbies">Hobbies</string>
     <string name="countries">Countries</string>
     <string name="health_amp_food"><![CDATA[Health & Food]]></string>
+    <string name="name">Name</string>
+    <string name="meaning">Meaning</string>
+    <string name="example">Example</string>
+    <string name="translation">Translation</string>
 </resources>
