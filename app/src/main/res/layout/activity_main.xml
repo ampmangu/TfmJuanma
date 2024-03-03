@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:padding="150dp"
     android:background="@drawable/background"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
     <!--        android:layout_marginStart="120dp"-->
     <!--        android:layout_marginTop="120dp"-->
     <com.google.android.material.button.MaterialButton

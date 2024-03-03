@@ -1,4 +1,4 @@
-package com.mangu.tfmjuanma;
+package com.mangu.tfmjuanma.activities;
 
 
 import android.content.Intent;
@@ -34,5 +34,6 @@ public class MainActivity extends AppCompatActivity {
         binding.btnRecap.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, RecapActivity.class)));
         binding.btnRecap.setTypeface(typeface);
         binding.btnReview.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ReviewActivity.class)));
+        binding.btnReview.setTypeface(typeface);
     }
 }
