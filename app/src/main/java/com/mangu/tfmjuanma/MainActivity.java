@@ -1,12 +1,12 @@
 package com.mangu.tfmjuanma;
 
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.mangu.tfmjuanma.databinding.ActivityMainBinding;
 
@@ -30,7 +30,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initializeButtons() {
+        Typeface typeface = Typeface.createFromAsset(getAssets(), "Burbank Big Condensed Bold.otf");
         binding.btnRecap.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, RecapActivity.class)));
+        binding.btnRecap.setTypeface(typeface);
         binding.btnReview.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ReviewActivity.class)));
     }
 }
