@@ -49,4 +49,7 @@ dependencies {
     annotationProcessor("com.google.dagger:hilt-compiler:2.44")
 
     implementation("com.google.android.material:material")
+
+    implementation("com.google.code.gson:gson:2.10.1")
+
 }
