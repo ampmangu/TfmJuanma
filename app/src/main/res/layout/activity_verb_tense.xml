@@ -32,7 +32,7 @@
             android:layout_height="match_parent">
 
         </TableLayout>
-    </LinearLayout>
 
+    </LinearLayout>
 
 </ScrollView>

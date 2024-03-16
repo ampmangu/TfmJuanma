@@ -1,5 +1,6 @@
 package com.mangu.tfmjuanma.activities;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
@@ -13,6 +14,8 @@ import com.mangu.tfmjuanma.R;
 import com.mangu.tfmjuanma.databinding.ActivityVerbTenseBinding;
 import com.mangu.tfmjuanma.model.Verb;
 import com.mangu.tfmjuanma.service.FileService;
+
+import org.parceler.Parcels;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,6 +55,11 @@ public class VerbTenseActivity extends AppCompatActivity {
 
                 tv = (TextView) tableRow.findViewById(R.id.tableCellVerb);
                 tv.setText(verb.getName());
+                tv.setOnClickListener(v -> {
+                    Intent intent = new Intent(VerbTenseActivity.this, VerbConjugationActivity.class);
+                    intent.putExtra("verb", Parcels.wrap(verb));
+                    startActivity(intent);
+                });
                 tableLayout.addView(tableRow);
             });
         }

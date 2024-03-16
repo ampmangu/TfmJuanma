@@ -5,8 +5,10 @@ import androidx.annotation.NonNull;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.Objects;
+import org.parceler.Parcel;
 
+import java.util.Objects;
+@Parcel
 public class Tense {
 
     @SerializedName("name")
