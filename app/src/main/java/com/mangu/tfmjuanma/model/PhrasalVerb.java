@@ -49,4 +49,9 @@ public class PhrasalVerb {
     public void setTranslation(String translation) {
         this.translation = translation;
     }
+
+    public boolean queryInVerb(String query) {
+        return (query != null && !query.isEmpty()) && (name.toLowerCase().contains(query.toLowerCase())
+                || meaning.toLowerCase().contains(query.toLowerCase()));
+    }
 }
