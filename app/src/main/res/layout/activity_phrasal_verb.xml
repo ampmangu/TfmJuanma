@@ -19,6 +19,7 @@
             android:layout_height="match_parent">
 
             <TableRow
+                android:id="@+id/default_row"
                 android:layout_width="fill_parent"
                 android:layout_height="?android:attr/listPreferredItemHeight"
                 android:focusable="true">

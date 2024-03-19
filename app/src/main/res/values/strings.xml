@@ -15,6 +15,6 @@
     <string name="example">Example</string>
     <string name="translation">Translation</string>
     <string name="verbos">Verbos</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hint">Busque un verbo...</string>
+    <string name="label_search">Busqueda</string>
 </resources>

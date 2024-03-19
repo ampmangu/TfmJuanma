@@ -1,7 +1,10 @@
 package com.mangu.tfmjuanma.activities;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.SearchView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -12,6 +15,10 @@ import com.mangu.tfmjuanma.R;
 import com.mangu.tfmjuanma.databinding.ActivityPhrasalVerbBinding;
 import com.mangu.tfmjuanma.model.PhrasalVerb;
 import com.mangu.tfmjuanma.service.FileService;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.inject.Inject;
 
@@ -24,6 +31,8 @@ public class PhrasalVerbActivity extends AppCompatActivity {
     @Inject
     public FileService fileService;
 
+    private List<PhrasalVerb> phrasalVerbs = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,11 +40,16 @@ public class PhrasalVerbActivity extends AppCompatActivity {
         addContentRows();
     }
 
+    private void initializeView() {
+        binding = ActivityPhrasalVerbBinding.inflate(getLayoutInflater());
+        View view = binding.getRoot();
+        setContentView(view);
+    }
+
     private void addContentRows() {
         final TableLayout tableLayout = binding.tableLayout;
-        this.fileService.getPhrasalVerbs().forEach(phrasalVerb -> {
-            addPhrasalVerbToLayout(tableLayout, phrasalVerb);
-        });
+        this.phrasalVerbs = this.fileService.getPhrasalVerbs();
+        this.phrasalVerbs.forEach(phrasalVerb -> addPhrasalVerbToLayout(tableLayout, phrasalVerb));
     }
 
     private void addPhrasalVerbToLayout(TableLayout tableLayout, PhrasalVerb phrasalVerb) {
@@ -57,9 +71,33 @@ public class PhrasalVerbActivity extends AppCompatActivity {
         tableLayout.addView(tableRow);
     }
 
-    private void initializeView() {
-        binding = ActivityPhrasalVerbBinding.inflate(getLayoutInflater());
-        View view = binding.getRoot();
-        setContentView(view);
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_action_bar, menu);
+        MenuItem item = menu.findItem(R.id.search);
+        SearchView searchView = (SearchView) item.getActionView();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+
+                binding.tableLayout.removeAllViews();
+                binding.tableLayout.addView(binding.defaultRow);
+                List<PhrasalVerb> filtered = phrasalVerbs.stream().filter(verb -> verb.queryInVerb(query)).collect(Collectors.toList());
+
+                filtered.forEach(phrasalVerb -> addPhrasalVerbToLayout(binding.tableLayout, phrasalVerb));
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                if (newText.isEmpty()) {
+                    binding.tableLayout.removeAllViews();
+                    binding.tableLayout.addView(binding.defaultRow);
+                    phrasalVerbs.forEach(phrasalVerb -> addPhrasalVerbToLayout(binding.tableLayout, phrasalVerb));
+                }
+                return false;
+            }
+        });
+        return super.onCreateOptionsMenu(menu);
     }
 }
