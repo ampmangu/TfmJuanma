@@ -25,4 +25,10 @@ public class Collocation {
     public void setMeaning(String meaning) {
         this.meaning = meaning;
     }
+
+    public boolean queryInCollocation(String query) {
+        return (query != null && !query.isEmpty()) &&
+                (collocation.toLowerCase().contains(query.toLowerCase()) ||
+                        meaning.toLowerCase().contains(query.toLowerCase()));
+    }
 }
