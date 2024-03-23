@@ -53,7 +53,7 @@ public class PhrasalVerbActivity extends AppCompatActivity {
     }
 
     private void addPhrasalVerbToLayout(TableLayout tableLayout, PhrasalVerb phrasalVerb) {
-        final TableRow tableRow = (TableRow) getLayoutInflater().inflate(R.layout.tablerow, null);
+        final TableRow tableRow = (TableRow) getLayoutInflater().inflate(R.layout.tablerow_four, null);
         TextView tv;
 
         tv = (TextView) tableRow.findViewById(R.id.tableCell1);

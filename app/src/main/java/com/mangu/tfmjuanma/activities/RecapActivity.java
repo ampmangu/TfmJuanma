@@ -31,6 +31,7 @@ public class RecapActivity extends AppCompatActivity {
         setTypefaces();
         binding.btnTenses.setOnClickListener(v -> startActivity(new Intent(RecapActivity.this, VerbTenseActivity.class)));
         binding.btnPhrasal.setOnClickListener(v -> startActivity(new Intent(RecapActivity.this, PhrasalVerbActivity.class)));
+        binding.btnCollocations.setOnClickListener(v -> startActivity(new Intent(RecapActivity.this, CollocationsActivity.class)));
     }
 
     private void setTypefaces() {

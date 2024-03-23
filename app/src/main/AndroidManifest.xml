@@ -14,6 +14,9 @@
         android:theme="@style/Theme.TfmJuanma"
         tools:targetApi="31">
         <activity
+            android:name=".activities.CollocationsActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.VerbConjugationActivity"
             android:exported="false" />
         <activity

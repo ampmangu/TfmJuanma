@@ -6,6 +6,7 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.mangu.tfmjuanma.model.Collocation;
 import com.mangu.tfmjuanma.model.PhrasalVerb;
 import com.mangu.tfmjuanma.model.Verb;
 import com.mangu.tfmjuanma.service.FileService;
@@ -46,6 +47,25 @@ public class LocalFileServiceImpl implements FileService {
             Log.e("LocalFileService", e.getLocalizedMessage());
         }
         return verbs;
+    }
+
+    @Override
+    public List<Collocation> getCollocations() {
+        List<Collocation> collocations = new ArrayList<>();
+        try {
+            collocations = getCollocationsFromAssets();
+        } catch (IOException e) {
+            Log.e("LocalFileService", e.getLocalizedMessage());
+        }
+        return collocations;
+    }
+
+    private List<Collocation> getCollocationsFromAssets() throws IOException {
+        AssetManager assetManager = this.appContext.getAssets();
+        Gson gson = new Gson();
+        return gson.fromJson(new InputStreamReader(assetManager.open("collocations.json")),
+                new TypeToken<List<Collocation>>() {
+                }.getType());
     }
 
     private List<Verb> getVerbsFromAssets() throws IOException {
