@@ -18,4 +18,5 @@
     <string name="hint">Busque un verbo...</string>
     <string name="label_search">Busqueda</string>
     <string name="adjective">Adjective</string>
+    <string name="hobby">Hobby</string>
 </resources>

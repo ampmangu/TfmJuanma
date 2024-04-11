@@ -14,6 +14,9 @@
         android:theme="@style/Theme.TfmJuanma"
         tools:targetApi="31">
         <activity
+            android:name=".activities.HobbiesActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.AdjectivesActivity"
             android:exported="false" />
         <activity

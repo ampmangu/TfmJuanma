@@ -31,5 +31,6 @@ public class ReviewActivity extends AppCompatActivity {
 
     private void initializeButtons() {
         binding.btnAdjectives.setOnClickListener(v -> startActivity(new Intent(ReviewActivity.this, AdjectivesActivity.class)));
+        binding.btnHobbies.setOnClickListener(v -> startActivity(new Intent(ReviewActivity.this, HobbiesActivity.class)));
     }
 }
