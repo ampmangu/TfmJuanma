@@ -10,10 +10,10 @@ import java.util.List;
 public class Verb {
     @SerializedName("name")
     @Expose
-    private String name;
+    public String name;
     @SerializedName("tenses")
     @Expose
-    private List<Tense> tenses;
+    public List<Tense> tenses;
 
     public String getName() {
         return name;

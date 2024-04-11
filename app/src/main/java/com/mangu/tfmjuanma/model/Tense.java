@@ -13,25 +13,25 @@ public class Tense {
 
     @SerializedName("name")
     @Expose
-    private String name;
+    public String name;
     @SerializedName("firstsingular")
     @Expose
-    private String firstsingular;
+    public String firstsingular;
     @SerializedName("secondsingular")
     @Expose
-    private String secondsingular;
+    public String secondsingular;
     @SerializedName("thirdsingular")
     @Expose
-    private String thirdsingular;
+    public String thirdsingular;
     @SerializedName("firstplural")
     @Expose
-    private String firstplural;
+    public String firstplural;
     @SerializedName("secondplural")
     @Expose
-    private String secondplural;
+    public String secondplural;
     @SerializedName("thirdplural")
     @Expose
-    private String thirdplural;
+    public String thirdplural;
 
     public String getName() {
         return name;

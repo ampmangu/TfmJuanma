@@ -17,4 +17,5 @@
     <string name="verbos">Verbos</string>
     <string name="hint">Busque un verbo...</string>
     <string name="label_search">Busqueda</string>
+    <string name="adjective">Adjective</string>
 </resources>

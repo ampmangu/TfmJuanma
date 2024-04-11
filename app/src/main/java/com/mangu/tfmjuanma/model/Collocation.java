@@ -6,9 +6,9 @@ import com.google.gson.annotations.SerializedName;
 public class Collocation {
     @SerializedName("collocation")
     @Expose
-    private String collocation;
+    public String collocation;
     @SerializedName("meaning")
-    private String meaning;
+    public String meaning;
 
     public String getCollocation() {
         return collocation;

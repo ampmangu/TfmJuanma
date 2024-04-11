@@ -7,16 +7,16 @@ public class PhrasalVerb {
 
     @SerializedName("name")
     @Expose
-    private String name;
+    public String name;
     @SerializedName("meaning")
     @Expose
-    private String meaning;
+    public String meaning;
     @SerializedName("example")
     @Expose
-    private String example;
+    public String example;
     @SerializedName("translation")
     @Expose
-    private String translation;
+    public String translation;
 
     public String getName() {
         return name;
