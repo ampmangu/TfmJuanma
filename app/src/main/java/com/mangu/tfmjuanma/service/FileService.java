@@ -2,6 +2,7 @@ package com.mangu.tfmjuanma.service;
 
 import com.mangu.tfmjuanma.model.Adjective;
 import com.mangu.tfmjuanma.model.Collocation;
+import com.mangu.tfmjuanma.model.Country;
 import com.mangu.tfmjuanma.model.Hobby;
 import com.mangu.tfmjuanma.model.PhrasalVerb;
 import com.mangu.tfmjuanma.model.Verb;
@@ -18,4 +19,6 @@ public interface FileService {
     List<Adjective> getAdjectives();
 
     List<Hobby> getHobbies();
+
+    List<Country> getCountries();
 }

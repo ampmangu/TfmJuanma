@@ -8,6 +8,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.mangu.tfmjuanma.model.Adjective;
 import com.mangu.tfmjuanma.model.Collocation;
+import com.mangu.tfmjuanma.model.Country;
 import com.mangu.tfmjuanma.model.Hobby;
 import com.mangu.tfmjuanma.model.PhrasalVerb;
 import com.mangu.tfmjuanma.model.Verb;
@@ -82,6 +83,25 @@ public class LocalFileServiceImpl implements FileService {
             Log.e("LocalFileService", e.getLocalizedMessage());
         }
         return hobbyList;
+    }
+
+    @Override
+    public List<Country> getCountries() {
+        List<Country> countryList = new ArrayList<>();
+        try {
+            countryList = getCountriesFromAssets();
+        } catch (IOException e) {
+            Log.e("LocalFileService", e.getLocalizedMessage());
+        }
+        return countryList;
+    }
+
+    private List<Country> getCountriesFromAssets() throws IOException {
+        AssetManager assetManager = this.appContext.getAssets();
+        Gson gson = new Gson();
+        return gson.fromJson(new InputStreamReader(assetManager.open("countries.json")),
+                new TypeToken<List<Country>>() {
+                }.getType());
     }
 
     private List<Hobby> getHobbiesFromAssets() throws IOException {
