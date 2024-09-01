@@ -20,4 +20,7 @@
     <string name="adjective">Adjective</string>
     <string name="hobby">Hobby</string>
     <string name="sentences">Sentences</string>
+    <string name="health">Health</string>
+    <string name="word">Word</string>
+    <string name="type">Type</string>
 </resources>
