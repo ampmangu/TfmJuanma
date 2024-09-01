@@ -47,7 +47,16 @@ public class HealthActivity extends AppCompatActivity {
     }
 
     private void addMethodsToLayout(Method method) {
+        final TableRow tableRow = (TableRow) getLayoutInflater().inflate(R.layout.tablerow_two, null);
+        TextView tv;
 
+        tv = (TextView) tableRow.findViewById(R.id.tableCell1);
+        tv.setText(method.getMethod());
+
+        tv = (TextView) tableRow.findViewById(R.id.tableCell2);
+        tv.setText(method.getMeaning());
+
+        binding.tableLayout2.addView(tableRow);
     }
 
     private void addHealthToLayout(Health health) {

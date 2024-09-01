@@ -16,7 +16,8 @@
         <TableLayout
             android:id="@+id/tableLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginBottom="20dp">
 
             <TableRow
                 android:id="@+id/default_row"
@@ -30,14 +31,13 @@
                     android:layout_column="0"
                     android:layout_weight="1"
                     android:background="@drawable/row_border"
+                    android:maxLines="1"
                     android:paddingStart="5dp"
                     android:paddingEnd="0dp"
                     android:text="@string/word"
                     android:textColor="@color/black"
                     android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:maxLines="1"
-                    />
+                    android:textStyle="bold" />
 
                 <TextView
                     android:id="@+id/type"
@@ -80,5 +80,45 @@
 
             </TableRow>
         </TableLayout>
+
+        <TableLayout
+            android:id="@+id/tableLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TableRow
+                android:id="@+id/default_row2"
+                android:layout_width="fill_parent"
+                android:layout_height="?android:attr/listPreferredItemHeight"
+                android:focusable="true">
+
+                <TextView
+                    android:id="@+id/method"
+                    android:layout_width="wrap_content"
+                    android:layout_column="0"
+                    android:layout_weight="1"
+                    android:background="@drawable/row_border"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/how_different_foods_are_prepared"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/meaning2"
+                    android:layout_width="wrap_content"
+                    android:layout_column="1"
+                    android:layout_weight="1"
+                    android:background="@drawable/row_border"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="0dp"
+                    android:text="@string/meaning"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </TableRow>
+        </TableLayout>
+
     </LinearLayout>
 </ScrollView>
