@@ -1,5 +1,6 @@
 package com.mangu.tfmjuanma.activities;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -32,6 +33,7 @@ public class RecapActivity extends AppCompatActivity {
         binding.btnTenses.setOnClickListener(v -> startActivity(new Intent(RecapActivity.this, VerbTenseActivity.class)));
         binding.btnPhrasal.setOnClickListener(v -> startActivity(new Intent(RecapActivity.this, PhrasalVerbActivity.class)));
         binding.btnCollocations.setOnClickListener(v -> startActivity(new Intent(RecapActivity.this, CollocationsActivity.class)));
+        binding.btnVocabulary.setOnClickListener(v -> startActivity(new Intent(RecapActivity.this, ReviewActivity.class)));
     }
 
     private void setTypefaces() {
@@ -40,5 +42,11 @@ public class RecapActivity extends AppCompatActivity {
         binding.btnCollocations.setTypeface(typeface);
         binding.btnPhrasal.setTypeface(typeface);
         binding.btnVocabulary.setTypeface(typeface);
+    }
+
+    @SuppressLint("MissingSuperCall")
+    @Override
+    public void onBackPressed() {
+        finishAffinity();
     }
 }

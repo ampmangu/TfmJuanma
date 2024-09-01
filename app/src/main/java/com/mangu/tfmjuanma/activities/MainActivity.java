@@ -19,7 +19,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initializeView();
+        MainActivity.this.startActivity(new Intent(MainActivity.this, RecapActivity.class));
+//        initializeView();
     }
 
     private void initializeView() {
