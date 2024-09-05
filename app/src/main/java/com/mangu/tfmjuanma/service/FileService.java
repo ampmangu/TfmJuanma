@@ -27,4 +27,6 @@ public interface FileService {
     List<Health> getHealthElements();
 
     List<Method> getMethods();
+
+    List<String> getWords();
 }

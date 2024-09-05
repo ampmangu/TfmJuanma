@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TfmJuanma</string>
+    <string name="app_name">InglésPlus</string>
     <string name="recap">Recap</string>
     <string name="review">Review</string>
     <string name="vocabulary">Vocabulary</string>
@@ -24,4 +24,7 @@
     <string name="word">Word</string>
     <string name="type">Type</string>
     <string name="how_different_foods_are_prepared">How different foods are prepared</string>
+    <string name="hangman">Hangman</string>
+    <string name="you_won">You won!</string>
+    <string name="you_lost">You lost!</string>
 </resources>

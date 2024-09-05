@@ -16,6 +16,7 @@ import com.mangu.tfmjuanma.model.PhrasalVerb;
 import com.mangu.tfmjuanma.model.Verb;
 import com.mangu.tfmjuanma.service.FileService;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
@@ -120,6 +121,24 @@ public class LocalFileServiceImpl implements FileService {
             Log.e("LocalFileService", e.getLocalizedMessage());
         }
         return methodList;
+    }
+
+    @Override
+    public List<String> getWords() {
+        List<String> words = new ArrayList<>();
+        try {
+            words = getWordsFromAssets();
+        } catch (IOException e) {
+            Log.e("LocalFileService", e.getLocalizedMessage());
+        }
+        return words;
+    }
+
+    private List<String> getWordsFromAssets() throws IOException {
+        AssetManager assetManager = this.appContext.getAssets();
+        BufferedReader bufferedReader =
+                new BufferedReader(new InputStreamReader(assetManager.open("words.txt")));
+        return bufferedReader.lines().collect(Collectors.toList());
     }
 
     private List<Method> getMethodsFromAssets() throws IOException {

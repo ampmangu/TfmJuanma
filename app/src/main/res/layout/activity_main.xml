@@ -33,7 +33,7 @@
 
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_review"
+        android:id="@+id/btn_hangman"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
@@ -41,7 +41,7 @@
         android:paddingBottom="50dp"
         android:paddingLeft="50dp"
         android:paddingRight="50dp"
-        android:text="@string/review"
+        android:text="@string/hangman"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_chainStyle="packed"

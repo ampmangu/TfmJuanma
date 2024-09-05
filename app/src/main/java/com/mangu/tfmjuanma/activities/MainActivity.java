@@ -19,8 +19,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        MainActivity.this.startActivity(new Intent(MainActivity.this, RecapActivity.class));
-//        initializeView();
+//        MainActivity.this.startActivity(new Intent(MainActivity.this, RecapActivity.class));
+        initializeView();
     }
 
     private void initializeView() {
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         Typeface typeface = Typeface.createFromAsset(getAssets(), "Burbank Big Condensed Bold.otf");
         binding.btnRecap.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, RecapActivity.class)));
         binding.btnRecap.setTypeface(typeface);
-        binding.btnReview.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, ReviewActivity.class)));
-        binding.btnReview.setTypeface(typeface);
+        binding.btnHangman.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, HangmanActivity.class)));
+        binding.btnHangman.setTypeface(typeface);
     }
 }
