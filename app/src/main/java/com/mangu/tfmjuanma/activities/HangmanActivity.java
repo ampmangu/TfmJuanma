@@ -1,6 +1,7 @@
 package com.mangu.tfmjuanma.activities;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.View;
@@ -25,6 +26,7 @@ import dagger.hilt.android.AndroidEntryPoint;
 @AndroidEntryPoint
 public class HangmanActivity extends AppCompatActivity {
 
+    public static final String PREFERENCES_GAME = "preferencesGame";
     private ActivityHangmanBinding binding;
     private Hangman hangman;
     @Inject
@@ -46,6 +48,8 @@ public class HangmanActivity extends AppCompatActivity {
         List<String> words = fileService.getWords();
         hangman = new Hangman(words);
         currentWord = hangman.pickGoodStarterWord();
+        SharedPreferences prefs = getSharedPreferences(PREFERENCES_GAME, MODE_PRIVATE);
+        maxScore = prefs.getInt("maxScore", 0);
     }
 
     private void initializeView() {
@@ -57,6 +61,7 @@ public class HangmanActivity extends AppCompatActivity {
         binding.solve.setOnClickListener(view1 -> binding.word.setText(currentWord));
         binding.play.setOnClickListener(this::playListener);
         binding.reset.callOnClick();
+        binding.high.setText("" + maxScore);
     }
 
     private void setUpLetterButton() {
@@ -100,11 +105,18 @@ public class HangmanActivity extends AppCompatActivity {
                     if (maxScore < score) {
                         maxScore = score;
                         binding.high.setText("" + maxScore);
+                        addMaxScore(maxScore);
                     }
                 }
             }
         }
         return flag;
+    }
+
+    private void addMaxScore(int maxScore) {
+        SharedPreferences.Editor editor = getSharedPreferences(PREFERENCES_GAME, MODE_PRIVATE).edit();
+        editor.putInt("maxScore", maxScore);
+        editor.apply();
     }
 
     private void checkScore(int flag, TextView word) {
