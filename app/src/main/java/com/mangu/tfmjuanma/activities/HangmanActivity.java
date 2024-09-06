@@ -99,7 +99,8 @@ public class HangmanActivity extends AppCompatActivity {
                 index = coincidences;
                 flag = 1;
                 if (!result.contains("_")) {
-                    word.setText(R.string.you_won);
+                    String youWon = getString(R.string.you_won);
+                    word.setText(youWon + "\n" + currentWord);
                     score += 1;
                     binding.score.setText("" + score);
                     if (maxScore < score) {
@@ -123,7 +124,8 @@ public class HangmanActivity extends AppCompatActivity {
         if (flag == 0) {
             count = count + 1;
             if (count >= 6) {
-                word.setText(R.string.you_lost);
+                String youLost = getString(R.string.you_lost);
+                word.setText(youLost + "\n" + currentWord);
                 score = 0;
                 binding.score.setText("" + score);
             }
