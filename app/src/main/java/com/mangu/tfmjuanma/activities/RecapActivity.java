@@ -1,6 +1,5 @@
 package com.mangu.tfmjuanma.activities;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -17,7 +16,6 @@ public class RecapActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_recap);
         initializeView();
     }
 
@@ -42,11 +40,5 @@ public class RecapActivity extends AppCompatActivity {
         binding.btnCollocations.setTypeface(typeface);
         binding.btnPhrasal.setTypeface(typeface);
         binding.btnVocabulary.setTypeface(typeface);
-    }
-
-    @SuppressLint("MissingSuperCall")
-    @Override
-    public void onBackPressed() {
-        finishAffinity();
     }
 }
