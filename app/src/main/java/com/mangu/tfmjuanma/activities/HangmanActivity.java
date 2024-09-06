@@ -17,7 +17,9 @@ import com.mangu.tfmjuanma.databinding.ActivityHangmanBinding;
 import com.mangu.tfmjuanma.model.Hangman;
 import com.mangu.tfmjuanma.service.FileService;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.inject.Inject;
 
@@ -36,6 +38,8 @@ public class HangmanActivity extends AppCompatActivity {
     private String result = " ";
 
     private int score = 0, maxScore = 0;
+
+    private Set<String> lettersAlreadyUsed = new HashSet<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,9 +87,16 @@ public class HangmanActivity extends AppCompatActivity {
         int flag = 0;
         TextView word = binding.word;
         String letter = editText.getText().toString().trim().toLowerCase();
+        addLetter(letter);
         flag = getCoincidences(letter, word, flag);
         checkScore(flag, word);
         editText.setText("");
+    }
+
+    private void addLetter(String letter) {
+        lettersAlreadyUsed.add(letter);
+        binding.setLetters.setText(String.format(getString(R.string.lettersAlreadyUsed),
+                String.join(", ", lettersAlreadyUsed)));
     }
 
     private int getCoincidences(String letter, TextView word, int flag) {
@@ -99,19 +110,23 @@ public class HangmanActivity extends AppCompatActivity {
                 index = coincidences;
                 flag = 1;
                 if (!result.contains("_")) {
-                    String youWon = getString(R.string.you_won);
-                    word.setText(youWon + "\n" + currentWord);
-                    score += 1;
-                    binding.score.setText("" + score);
-                    if (maxScore < score) {
-                        maxScore = score;
-                        binding.high.setText("" + maxScore);
-                        addMaxScore(maxScore);
-                    }
+                    winningScenario(word);
                 }
             }
         }
         return flag;
+    }
+
+    private void winningScenario(TextView word) {
+        String youWon = getString(R.string.you_won);
+        word.setText(youWon + "\n" + currentWord);
+        score += 1;
+        binding.score.setText("" + score);
+        if (maxScore < score) {
+            maxScore = score;
+            binding.high.setText("" + maxScore);
+            addMaxScore(maxScore);
+        }
     }
 
     private void addMaxScore(int maxScore) {
@@ -123,19 +138,25 @@ public class HangmanActivity extends AppCompatActivity {
     private void checkScore(int flag, TextView word) {
         if (flag == 0) {
             count = count + 1;
-            if (count >= 6) {
-                String youLost = getString(R.string.you_lost);
-                word.setText(youLost + "\n" + currentWord);
-                score = 0;
-                binding.score.setText("" + score);
-            }
+            losingScenario(word);
             int idHang = getResources().getIdentifier("hang" + count, "drawable", getApplication().getPackageName());
             binding.hang.setImageDrawable(getDrawable(idHang));
         }
     }
 
+    private void losingScenario(TextView word) {
+        if (count >= 6) {
+            String youLost = getString(R.string.you_lost);
+            word.setText(youLost + "\n" + currentWord);
+            score = 0;
+            binding.score.setText("" + score);
+        }
+    }
+
     private void resetListener(View view1) {
         count = 0;
+        lettersAlreadyUsed.clear();
+        binding.setLetters.setText(String.format(getString(R.string.lettersAlreadyUsed), ""));
         int hangId = getResources().getIdentifier("hang0", "drawable", getApplication().getPackageName());
         binding.hang.setImageDrawable(getDrawable(hangId));
         currentWord = null;

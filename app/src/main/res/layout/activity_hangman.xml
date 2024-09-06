@@ -22,6 +22,15 @@
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
             android:src="@drawable/hang0" />
+        <TextView
+            android:id="@+id/set_letters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:textSize="20sp"
+            android:paddingEnd="60sp"
+            android:text="@string/lettersAlreadyUsed"
+            />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -32,14 +41,15 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Enter the letter : "
-                android:textSize="15dp" />
+                android:text="@string/enter_the_letter"
+                android:textSize="20sp" />
 
             <EditText
                 android:id="@+id/letter"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:maxLength="1" />
+
         </LinearLayout>
 
         <TextView

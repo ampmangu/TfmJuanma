@@ -27,4 +27,6 @@
     <string name="hangman">Hangman</string>
     <string name="you_won">You won!</string>
     <string name="you_lost">You lost!</string>
+    <string name="lettersAlreadyUsed">Letters already used: %1$s</string>
+    <string name="enter_the_letter">Enter the letter :</string>
 </resources>
