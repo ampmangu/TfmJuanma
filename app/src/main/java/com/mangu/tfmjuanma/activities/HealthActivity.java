@@ -1,5 +1,6 @@
 package com.mangu.tfmjuanma.activities;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TableRow;
@@ -52,9 +53,11 @@ public class HealthActivity extends AppCompatActivity {
 
         tv = (TextView) tableRow.findViewById(R.id.tableCell1);
         tv.setText(method.getMethod());
+        tv.setTypeface(null, Typeface.BOLD);
 
         tv = (TextView) tableRow.findViewById(R.id.tableCell2);
         tv.setText(method.getMeaning());
+        tv.setTypeface(null, Typeface.BOLD);
 
         binding.tableLayout2.addView(tableRow);
     }
