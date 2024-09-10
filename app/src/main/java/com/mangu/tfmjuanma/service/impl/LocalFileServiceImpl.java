@@ -13,6 +13,7 @@ import com.mangu.tfmjuanma.model.Health;
 import com.mangu.tfmjuanma.model.Hobby;
 import com.mangu.tfmjuanma.model.Method;
 import com.mangu.tfmjuanma.model.PhrasalVerb;
+import com.mangu.tfmjuanma.model.Question;
 import com.mangu.tfmjuanma.model.Verb;
 import com.mangu.tfmjuanma.service.FileService;
 
@@ -132,6 +133,26 @@ public class LocalFileServiceImpl implements FileService {
             Log.e("LocalFileService", e.getLocalizedMessage());
         }
         return words;
+    }
+
+    @Override
+    public List<Question> getQuestions() {
+        List<Question> questions = new ArrayList<>();
+        try {
+            questions = getQuestionsFromAssets();
+        } catch (IOException e) {
+            Log.e("LocalFileService", e.getLocalizedMessage());
+        }
+        return questions;
+    }
+
+    private List<Question> getQuestionsFromAssets() throws IOException{
+        AssetManager assetManager = this.appContext.getAssets();
+        BufferedReader bufferedReader =
+                new BufferedReader(new InputStreamReader(assetManager.open("questions.txt")));
+        return bufferedReader.lines().skip(1) // skip header
+                .map(Question::fromString)
+                .collect(Collectors.toList());
     }
 
     private List<String> getWordsFromAssets() throws IOException {

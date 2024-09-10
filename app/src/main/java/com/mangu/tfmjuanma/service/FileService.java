@@ -7,6 +7,7 @@ import com.mangu.tfmjuanma.model.Health;
 import com.mangu.tfmjuanma.model.Hobby;
 import com.mangu.tfmjuanma.model.Method;
 import com.mangu.tfmjuanma.model.PhrasalVerb;
+import com.mangu.tfmjuanma.model.Question;
 import com.mangu.tfmjuanma.model.Verb;
 
 import java.util.List;
@@ -29,4 +30,6 @@ public interface FileService {
     List<Method> getMethods();
 
     List<String> getWords();
+
+    List<Question> getQuestions();
 }

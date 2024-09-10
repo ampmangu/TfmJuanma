@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="150dp"
     android:background="@drawable/background"
+    android:padding="100dp"
     tools:context=".activities.MainActivity">
     <!--        android:layout_marginStart="120dp"-->
     <!--        android:layout_marginTop="120dp"-->
@@ -13,47 +13,61 @@
         android:id="@+id/btn_recap"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingTop="50dp"
-        android:paddingBottom="50dp"
-        android:paddingLeft="50dp"
-        android:paddingRight="50dp"
+        android:backgroundTint="@color/red"
         android:gravity="center"
+        android:paddingLeft="50dp"
+        android:paddingTop="50dp"
+        android:paddingRight="50dp"
+        android:paddingBottom="50dp"
         android:text="@string/recap"
         android:textSize="30sp"
+        app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:backgroundTint="@color/red"
-        app:cornerRadius="20dp"
         app:strokeColor="@color/white"
-        app:strokeWidth="15dp"
-        />
+        app:strokeWidth="15dp" />
 
-
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_quiz"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/brat"
+        android:gravity="center"
+        android:paddingLeft="50dp"
+        android:paddingTop="50dp"
+        android:paddingRight="50dp"
+        android:paddingBottom="50dp"
+        android:text="@string/quiz"
+        android:textSize="30sp"
+        app:cornerRadius="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_hangman"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_recap"
+        app:strokeColor="@color/white"
+        app:strokeWidth="15dp" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_hangman"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/blue"
         android:gravity="center"
-        android:paddingTop="50dp"
-        android:paddingBottom="50dp"
         android:paddingLeft="50dp"
+        android:paddingTop="50dp"
         android:paddingRight="50dp"
+        android:paddingBottom="50dp"
         android:text="@string/hangman"
         android:textSize="30sp"
+        app:cornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:backgroundTint="@color/blue"
-        app:cornerRadius="20dp"
         app:strokeColor="@color/white"
-        app:strokeWidth="15dp"
-         />
-
-
+        app:strokeWidth="15dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

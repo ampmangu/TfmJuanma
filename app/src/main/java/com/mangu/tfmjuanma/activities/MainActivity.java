@@ -19,7 +19,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        MainActivity.this.startActivity(new Intent(MainActivity.this, RecapActivity.class));
         initializeView();
     }
 
@@ -36,5 +35,7 @@ public class MainActivity extends AppCompatActivity {
         binding.btnRecap.setTypeface(typeface);
         binding.btnHangman.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, HangmanActivity.class)));
         binding.btnHangman.setTypeface(typeface);
+        binding.btnQuiz.setOnClickListener(v -> startActivity(new Intent(MainActivity.this, QuizActivity.class)));
+        binding.btnQuiz.setTypeface(typeface);
     }
 }
