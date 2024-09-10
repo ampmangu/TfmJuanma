@@ -1,2 +1,6 @@
 # question; answer; fake answer; fake answer; fake answer; position of real answer (0 - 3)
 What is to boil food?; To answer a question; To cook it in boiling water; To fry it in oil; To cook it slowly; 1
+What does 'annoying' mean in Spanish?; Irritante; Agobiante; Decepcionante; Emocionante; 0
+What does 'go out of fashion' mean in Spanish?; Pasarse de frenada; Pasarse de tono; Pasarse de moda; Pasar de todo; 2
+How do you conjugate the second person singular of the past simple of 'Eat'?; You eat; You have eaten; You are eating; You ate; 3
+How do you conjugate the first person singular of the present continuous of 'Go'?; I have gone; I had gone; I am going; I go; 2

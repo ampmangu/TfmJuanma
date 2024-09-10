@@ -30,4 +30,8 @@
     <string name="lettersAlreadyUsed">Letters already used: %1$s</string>
     <string name="enter_the_letter">Enter the letter :</string>
     <string name="quiz">Quiz</string>
+    <string name="next">Next</string>
+    <string name="results">Results: %1$d/%2$d. %3$s</string>
+    <string name="passed">You passed!</string>
+    <string name="no_passed">You did not pass.</string>
 </resources>
