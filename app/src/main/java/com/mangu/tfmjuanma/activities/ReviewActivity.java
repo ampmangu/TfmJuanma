@@ -34,5 +34,16 @@ public class ReviewActivity extends AppCompatActivity {
         binding.btnHobbies.setOnClickListener(v -> startActivity(new Intent(ReviewActivity.this, HobbiesActivity.class)));
         binding.btnCountries.setOnClickListener(v -> startActivity(new Intent(ReviewActivity.this, CountriesActivity.class)));
         binding.btnHealth.setOnClickListener(v -> startActivity(new Intent(ReviewActivity.this, HealthActivity.class)));
+        binding.btnFrequency.setOnClickListener(v -> {
+            Intent intent = new Intent(ReviewActivity.this, AdverbActivity.class);
+            intent.putExtra("adverbType", "frequency");
+            startActivity(intent);
+        });
+        binding.btnAdvtime.setOnClickListener(v -> {
+            Intent intent = new Intent(ReviewActivity.this, AdverbActivity.class);
+            intent.putExtra("adverbType", "time");
+            startActivity(intent);
+        });
+
     }
 }

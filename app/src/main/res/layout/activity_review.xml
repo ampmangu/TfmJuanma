@@ -1,96 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
+    android:baselineAligned="false"
     tools:context=".activities.ReviewActivity">
 
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_adjectives"
+    <LinearLayout
+        android:id="@+id/left_side"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="40dp"
-        android:backgroundTint="@color/red"
-        android:paddingLeft="50dp"
-        android:paddingTop="50dp"
-        android:paddingRight="50dp"
-        android:paddingBottom="50dp"
-        android:text="@string/adjectives"
-        android:textSize="30sp"
-        app:cornerRadius="20dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btn_hobbies"
-        app:layout_constraintEnd_toStartOf="@+id/btn_hobbies"
-        app:layout_constraintStart_toStartOf="parent"
-        app:strokeColor="@color/white"
-        app:strokeWidth="15dp" />
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_hobbies"
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_adjectives"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="40dp"
+            android:backgroundTint="@color/red"
+            android:paddingLeft="50dp"
+            android:paddingTop="50dp"
+            android:paddingRight="50dp"
+            android:paddingBottom="50dp"
+            android:text="@string/adjectives"
+            android:textSize="30sp"
+            app:cornerRadius="20dp"
+            app:strokeColor="@color/white"
+            app:strokeWidth="15dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_hobbies"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="40dp"
+            android:backgroundTint="@color/blue"
+            android:gravity="center"
+            android:paddingLeft="50dp"
+            android:paddingTop="50dp"
+            android:paddingRight="50dp"
+            android:paddingBottom="50dp"
+            android:text="@string/hobbies"
+            android:textSize="30sp"
+            app:cornerRadius="20dp"
+            app:strokeColor="@color/white"
+            app:strokeWidth="15dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_countries"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="80dp"
+            android:backgroundTint="@color/peach"
+            android:gravity="center"
+            android:paddingLeft="50dp"
+            android:paddingTop="50dp"
+            android:paddingRight="50dp"
+            android:paddingBottom="50dp"
+            android:text="@string/countries"
+            android:textSize="30sp"
+            app:cornerRadius="20dp"
+            app:strokeColor="@color/white"
+            app:strokeWidth="15dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/right_side"
         android:layout_width="0dp"
-        android:layout_height="153dp"
-        android:layout_marginTop="123dp"
-        android:layout_marginEnd="20dp"
-        android:backgroundTint="@color/blue"
-        android:gravity="center"
-        android:paddingLeft="50dp"
-        android:paddingTop="50dp"
-        android:paddingRight="50dp"
-        android:paddingBottom="50dp"
-        android:text="@string/hobbies"
-        android:textSize="30sp"
-        app:cornerRadius="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_adjectives"
-        app:layout_constraintTop_toTopOf="parent"
-        app:strokeColor="@color/white"
-        app:strokeWidth="15dp" />
+        android:layout_height="fill_parent"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_advtime"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="40dp"
+            android:backgroundTint="@color/teal_200"
+            android:gravity="center"
+            android:paddingLeft="50dp"
+            android:paddingTop="50dp"
+            android:paddingRight="50dp"
+            android:paddingBottom="50dp"
+            android:text="@string/time_adverbs"
+            android:textSize="30sp"
+            app:cornerRadius="20dp"
+
+            app:strokeColor="@color/white"
+            app:strokeWidth="15dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_frequency"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginEnd="40dp"
+            android:backgroundTint="@color/yellow"
+            android:gravity="center"
+            android:paddingLeft="50dp"
+            android:paddingTop="50dp"
+            android:paddingRight="50dp"
+            android:paddingBottom="50dp"
+            android:text="@string/frequency_adverbs"
+            android:textSize="30sp"
+            app:cornerRadius="20dp"
+            app:strokeColor="@color/white"
+            app:strokeWidth="15dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_health"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="80dp"
+            android:backgroundTint="@color/green"
+            android:gravity="center"
+            android:paddingLeft="50dp"
+            android:paddingTop="50dp"
+            android:paddingRight="50dp"
+            android:paddingBottom="50dp"
+            android:text="@string/health_amp_food"
+            android:textSize="30sp"
+            app:cornerRadius="20dp"
+            app:strokeColor="@color/white"
+            app:strokeWidth="15dp" />
+
+    </LinearLayout>
 
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_countries"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="40dp"
-        android:backgroundTint="@color/yellow"
-        android:gravity="center"
-        android:paddingLeft="50dp"
-        android:paddingTop="50dp"
-        android:paddingRight="50dp"
-        android:paddingBottom="50dp"
-        android:text="@string/countries"
-        android:textSize="30sp"
-        app:cornerRadius="20dp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/btn_health"
-        app:layout_constraintEnd_toStartOf="@+id/btn_health"
-        app:layout_constraintStart_toStartOf="parent"
-        app:strokeColor="@color/white"
-        app:strokeWidth="15dp" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_health"
-        android:layout_width="0dp"
-        android:layout_height="153dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="124dp"
-        android:backgroundTint="@color/green"
-        android:gravity="center"
-        android:paddingLeft="50dp"
-        android:paddingTop="50dp"
-        android:paddingRight="50dp"
-        android:paddingBottom="50dp"
-        android:text="@string/health_amp_food"
-        android:textSize="30sp"
-        app:cornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_countries"
-        app:strokeColor="@color/white"
-        app:strokeWidth="15dp" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

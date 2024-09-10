@@ -34,4 +34,7 @@
     <string name="results">Results: %1$d/%2$d. %3$s</string>
     <string name="passed">You passed!</string>
     <string name="no_passed">You did not pass.</string>
+    <string name="frequency_adverbs">Frequency adverbs</string>
+    <string name="time_adverbs">Time adverbs</string>
+    <string name="adverb">Adverb</string>
 </resources>

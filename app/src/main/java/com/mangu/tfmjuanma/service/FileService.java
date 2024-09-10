@@ -1,6 +1,7 @@
 package com.mangu.tfmjuanma.service;
 
 import com.mangu.tfmjuanma.model.Adjective;
+import com.mangu.tfmjuanma.model.Adverb;
 import com.mangu.tfmjuanma.model.Collocation;
 import com.mangu.tfmjuanma.model.Country;
 import com.mangu.tfmjuanma.model.Health;
@@ -32,4 +33,8 @@ public interface FileService {
     List<String> getWords();
 
     List<Question> getQuestions();
+
+    List<Adverb> getFrequencyAdverbs();
+
+    List<Adverb> getTimeAdverbs();
 }

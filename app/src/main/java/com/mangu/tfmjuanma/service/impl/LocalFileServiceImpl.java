@@ -7,6 +7,7 @@ import android.util.Log;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.mangu.tfmjuanma.model.Adjective;
+import com.mangu.tfmjuanma.model.Adverb;
 import com.mangu.tfmjuanma.model.Collocation;
 import com.mangu.tfmjuanma.model.Country;
 import com.mangu.tfmjuanma.model.Health;
@@ -146,7 +147,38 @@ public class LocalFileServiceImpl implements FileService {
         return questions;
     }
 
-    private List<Question> getQuestionsFromAssets() throws IOException{
+    @Override
+    public List<Adverb> getFrequencyAdverbs() {
+        List<Adverb> adverbs = new ArrayList<>();
+        try {
+            adverbs = getAdverbsFromAssets("frequency.json");
+        } catch (IOException e) {
+            Log.e("LocalFileService", e.getLocalizedMessage());
+        }
+        return adverbs;
+    }
+
+
+    @Override
+    public List<Adverb> getTimeAdverbs() {
+        List<Adverb> adverbs = new ArrayList<>();
+        try {
+            adverbs = getAdverbsFromAssets("time.json");
+        } catch (IOException e) {
+            Log.e("LocalFileService", e.getLocalizedMessage());
+        }
+        return adverbs;
+    }
+
+    private List<Adverb> getAdverbsFromAssets(String file) throws IOException {
+        AssetManager assetManager = this.appContext.getAssets();
+        Gson gson = new Gson();
+        return gson.fromJson(new InputStreamReader(assetManager.open(file)),
+                new TypeToken<List<Adverb>>() {
+                }.getType());
+    }
+
+    private List<Question> getQuestionsFromAssets() throws IOException {
         AssetManager assetManager = this.appContext.getAssets();
         BufferedReader bufferedReader =
                 new BufferedReader(new InputStreamReader(assetManager.open("questions.txt")));
